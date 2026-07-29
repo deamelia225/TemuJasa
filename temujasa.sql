@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 CREATE DATABASE temujasa;
 USE temujasa;
 
@@ -44,7 +43,6 @@ INSERT INTO jasa(nama_jasa,deskripsi,harga,pekerja) VALUES
 
 INSERT INTO notifikasi(id_user,pesan) VALUES
                                           (1,'Booking Service AC berhasil'),
-=======
 CREATE DATABASE temujasa;
 USE temujasa;
 
@@ -90,5 +88,4 @@ INSERT INTO jasa(nama_jasa,deskripsi,harga,pekerja) VALUES
 
 INSERT INTO notifikasi(id_user,pesan) VALUES
                                           (1,'Booking Service AC berhasil'),
->>>>>>> bc0502961ea35b227441628e7da2cfa662999b71
                                           (1,'Pembayaran berhasil');
