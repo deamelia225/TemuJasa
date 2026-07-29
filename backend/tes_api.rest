@@ -1,0 +1,273 @@
+### REGISTER PELANGGAN MIMA
+POST http://localhost:22000/api/auth/register
+Content-Type: application/json
+
+{
+  "role":"Pelanggan",
+  "nama":"Mima",
+  "username":"mima",
+  "email":"mima@gmail.com",
+  "password":"mima22",
+  "no_hp":"081234567890",
+  "alamat":"Bandung"
+}
+
+###
+### REGISTER PELANGGAN LAVANYA
+POST http://localhost:22000/api/auth/register
+Content-Type: application/json
+
+{
+  "role":"Pelanggan",
+  "nama":"Lavanya",
+  "username":"lavanya",
+  "email":"lavanya@gmail.com",
+  "password":"123456",
+  "no_hp":"084444444444",
+  "alamat":"Depok"
+}
+
+###
+### REGISTER PELANGGAN LULU
+POST http://localhost:22000/api/auth/register
+Content-Type: application/json
+
+{
+  "role":"Pelanggan",
+  "nama":"Lulu",
+  "username":"lulu",
+  "email":"lulu@gmail.com",
+  "password":"123456",
+  "no_hp":"085555555555",
+  "alamat":"Bekasi"
+}
+
+###
+### REGISTER PEKERJA DEA
+POST http://localhost:22000/api/auth/register
+Content-Type: application/json
+
+{
+  "role":"Pekerja",
+  "nama":"Dea",
+  "username":"dea5",
+  "email":"dea5@gmail.com",
+  "password":"123456",
+  "no_hp":"081111111111",
+  "alamat":"Bandung"
+}
+
+###
+### REGISTER PEKERJA EL
+POST http://localhost:22000/api/auth/register
+Content-Type: application/json
+
+{
+  "role":"Pekerja",
+  "nama":"El",
+  "username":"el22",
+  "email":"el22@gmail.com",
+  "password":"123456",
+  "no_hp":"082222222222",
+  "alamat":"Bandung"
+}
+
+###
+### REGISTER PEKERJA UJANG
+POST http://localhost:22000/api/auth/register
+Content-Type: application/json
+
+{
+  "role":"Pekerja",
+  "nama":"Ujang",
+  "username":"ujang",
+  "email":"ujang@gmail.com",
+  "password":"123456",
+  "no_hp":"083333333333",
+  "alamat":"Bogor"
+}
+
+###
+### LOGIN MIMA
+POST http://localhost:22000/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"mima@gmail.com",
+  "password":"mima22"
+}
+
+###
+### LOGIN LAVANYA
+POST http://localhost:22000/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"lavanya@gmail.com",
+  "password":"123456"
+}
+
+###
+### LOGIN LULU
+POST http://localhost:22000/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"lulu@gmail.com",
+  "password":"123456"
+}
+
+###
+### LOGIN DEA
+POST http://localhost:22000/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"dea5@gmail.com",
+  "password":"123456"
+}
+
+###
+### LOGIN EL
+POST http://localhost:22000/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"el22@gmail.com",
+  "password":"123456"
+}
+
+###
+### LOGIN UJANG
+POST http://localhost:22000/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"ujang@gmail.com",
+  "password":"123456"
+}
+
+###
+### GET SEMUA JASA
+GET http://localhost:22000/api/jasa
+
+###
+### TAMBAH JASA DEA
+POST http://localhost:22000/api/jasa
+Content-Type: application/json
+
+{
+  "id_user":4,
+  "nama_jasa":"Service Elektronik",
+  "deskripsi":"Perbaikan elektronik rumah",
+  "harga":150000,
+  "kategori":"Elektronik"
+}
+
+###
+### TAMBAH JASA EL
+POST http://localhost:22000/api/jasa
+Content-Type: application/json
+
+{
+  "id_user":5,
+  "nama_jasa":"Jasa Kebersihan",
+  "deskripsi":"Membersihkan rumah dan kantor",
+  "harga":100000,
+  "kategori":"Kebersihan"
+}
+
+###
+### TAMBAH JASA UJANG
+POST http://localhost:22000/api/jasa
+Content-Type: application/json
+
+{
+  "id_user":6,
+  "nama_jasa":"Jasa Tukang",
+  "deskripsi":"Perbaikan dan renovasi rumah",
+  "harga":200000,
+  "kategori":"Perbaikan"
+}
+
+###
+### DETAIL JASA
+GET http://localhost:22000/api/jasa/1
+
+###
+### GET SEMUA BOOKING
+GET http://localhost:22000/api/booking
+
+###
+### TAMBAH BOOKING
+POST http://localhost:22000/api/booking
+Content-Type: application/json
+
+{
+  "id_user":1,
+  "id_jasa":1,
+  "tanggal":"2026-07-26",
+  "alamat":"Bandung",
+  "catatan":"Datang pagi"
+}
+
+###
+### UPDATE STATUS BOOKING
+PUT http://localhost:22000/api/booking/1
+Content-Type: application/json
+
+{
+  "status":"Diterima"
+}
+
+###
+### GET PEMBAYARAN
+GET http://localhost:22000/api/pembayaran
+
+###
+### TAMBAH PEMBAYARAN
+POST http://localhost:22000/api/pembayaran
+Content-Type: application/json
+
+{
+  "id_booking":1,
+  "metode":"Transfer",
+  "jumlah":150000,
+  "status":"Berhasil"
+}
+
+###
+### GET ULASAN
+GET http://localhost:22000/api/ulasan
+
+###
+### TAMBAH ULASAN
+POST http://localhost:22000/api/ulasan
+Content-Type: application/json
+
+{
+  "id_booking":1,
+  "rating":5,
+  "komentar":"Pelayanan bagus"
+}
+
+###
+### GET NOTIFIKASI
+GET http://localhost:22000/api/notifikasi
+
+###
+### GET PEKERJA
+GET http://localhost:22000/api/pekerja
+
+###
+### GET USERS
+GET http://localhost:22000/api/users
+###
+
+GET http://localhost:22000/api/pembayaran
+###
+
+GET http://localhost:22000/api/ulasan
+###
+
+GET http://localhost:22000/api/notifikasi
