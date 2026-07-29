@@ -1,0 +1,76 @@
+.booking-masuk-page{
+    padding:40px;
+    background:#faf7fb;
+    min-height:100vh;
+}
+.booking-masuk-page h1{
+    font-size:35px;
+    color:#17203a;
+    margin-bottom:30px;
+}
+.booking-worker-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+}
+.booking-worker-card{
+    width:380px;
+    background:white;
+    padding:25px;
+    border-radius:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+.booking-worker-card h2{
+    color:#5146df;
+    margin-bottom:20px;
+}
+.worker-detail p{
+    margin:10px 0;
+    color:#4b5563;
+}
+.worker-status{
+    background:#f5f3ff;
+    padding:15px;
+    border-radius:15px;
+    margin-top:20px;
+}
+.worker-status p{
+    margin:8px 0 3px;
+    color:#666;
+}
+.worker-status strong{
+    color:#5146df;
+}
+.worker-action{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:20px;
+}
+.worker-action button{
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+}
+.btn-terima{
+    background:#16a34a;
+    color:white;
+}
+.btn-tolak{
+    background:#dc2626;
+    color:white;
+}
+.btn-bayar{
+    background:#2563eb;
+    color:white;
+}
+.btn-selesai{
+    background:#f59e0b;
+    color:white;
+}
+.worker-action button:hover{
+    opacity:.85;
+}

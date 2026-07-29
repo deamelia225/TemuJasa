@@ -1,0 +1,83 @@
+.page{
+    padding:30px;
+}
+
+.page h1{
+    margin-bottom:20px;
+}
+
+.booking-filter{
+    margin-bottom:20px;
+}
+
+.booking-filter select{
+    width:220px;
+    padding:10px 15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#fff;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.booking-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    margin-top:15px;
+}
+
+.booking-table th{
+    background:#4f46e5;
+    color:#fff;
+    padding:16px;
+    text-align:left;
+    font-weight:600;
+}
+
+.booking-table td{
+    padding:16px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+}
+
+.booking-table tr:last-child td{
+    border-bottom:none;
+}
+
+.booking-table tr:hover{
+    background:#f8f8ff;
+}
+
+.booking-empty{
+    text-align:center;
+    padding:30px;
+    color:#64748b;
+}
+
+.booking-table th:nth-child(1){
+    width:25%;
+}
+
+.booking-table th:nth-child(2){
+    width:12%;
+}
+
+.booking-table th:nth-child(3){
+    width:10%;
+}
+
+.booking-table th:nth-child(4){
+    width:28%;
+}
+
+.booking-table th:nth-child(5){
+    width:12%;
+}
+
+.booking-table th:nth-child(6){
+    width:13%;
+}

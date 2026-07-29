@@ -1,0 +1,16 @@
+.semuajasa-page{padding:32px}
+.page-header h1{font-size:32px;font-weight:700;color:#1e293b}
+.page-header p{color:#64748b;margin-top:8px}
+.kategori-filter{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.kategori-filter button{border:none;padding:10px 18px;border-radius:12px;background:#e2e8f0;color:#334155;cursor:pointer;font-weight:600}
+.kategori-filter button.active{background:#475569;color:#fff}
+.jasa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.jasa-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.06);transition:.3s}
+.jasa-card:hover{transform:translateY(-5px)}
+.jasa-card img{width:100%;height:220px;object-fit:cover}
+.jasa-content{padding:18px}
+.jasa-content h3{margin-bottom:8px;color:#0f172a}
+.jasa-content p{color:#64748b;margin-bottom:10px}
+.rating{display:block;margin-bottom:12px;color:#f59e0b}
+.jasa-content h4{margin-bottom:16px;color:#2563eb}
+.lihat-btn{display:block;text-align:center;padding:12px;background:#334155;color:#fff;border-radius:10px;text-decoration:none}

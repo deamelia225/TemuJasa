@@ -1,0 +1,16 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+body{
+    background:#f4f6fb;
+    color:#1f2937;
+}
+a{
+    text-decoration:none;
+}
+button{
+    cursor:pointer;
+}

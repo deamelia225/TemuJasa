@@ -1,153 +1,73 @@
-import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
+import {useState} from "react";
+import {useSearchParams,useNavigate} from "react-router-dom";
+import "../styles/Ulasan.css";
 
-function Ulasan() {
-    const loginUser = JSON.parse(localStorage.getItem("user")) || {};
+function Ulasan(){
+    const[searchParams]=useSearchParams();
+    const navigate=useNavigate();
+    const id=Number(searchParams.get("id"));
 
-    const [ulasan, setUlasan] = useState([]);
-    const [idBooking, setIdBooking] = useState("");
-    const [rating, setRating] = useState("");
-    const [komentar, setKomentar] = useState("");
+    const[rating,setRating]=useState(5);
+    const[ulasan,setUlasan]=useState("");
 
-    useEffect(() => {
-        tampilUlasan();
-    }, []);
+    const submitUlasan=()=>{
+        const booking=JSON.parse(localStorage.getItem("booking"))||[];
 
-    async function tampilUlasan() {
-        try {
-            let response;
-
-            if (loginUser.role === "Pelanggan") {
-                response = await fetch(
-                    `http://localhost:22000/ulasan/pelanggan/${loginUser.id_pelanggan}`
-                );
-            } else if (loginUser.role === "Pekerja") {
-                response = await fetch(
-                    `http://localhost:22000/ulasan/pekerja/${loginUser.id_pekerja}`
-                );
-            } else {
-                response = await fetch(
-                    "http://localhost:22000/ulasan"
-                );
-            }
-            const data = await response.json();
-            setUlasan(Array.isArray(data) ? data : []);
-
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    async function simpanUlasan() {
-        if (idBooking === "" || rating === "") {
-            alert("ID Booking dan Rating harus diisi");
-            return;
-        }
-        try {
-            const response = await fetch(
-                "http://localhost:22000/ulasan",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        id_booking: idBooking,
-                        rating,
-                        komentar
-                    })
+        const updated=booking.map(item=>
+            item.id===id
+                ?{
+                    ...item,
+                    rating,
+                    ulasan
                 }
-            );
-            const result = await response.json();
-            if (!response.ok) {
-                alert(result.message);
-                return;
-            }
-            alert(result.message);
-            setIdBooking("");
-            setRating("");
-            setKomentar("");
-            tampilUlasan();
-        } catch (error) {
-            console.log(error);
-            alert("Server tidak dapat dihubungi");
-        }
-    }
+                :item
+        );
 
-    return (
-        <Layout>
-            <h2>Ulasan</h2>
-            <hr />
-            {loginUser.role === "Pelanggan" && (
-                <>
-                    <p>ID Booking</p>
-                    <input
-                        type="number"
-                        value={idBooking}
-                        onChange={(e) => setIdBooking(e.target.value)}
-                    />
-                    <p>Rating</p>
-                    <select
-                        value={rating}
-                        onChange={(e) => setRating(e.target.value)}
-                    >
-                        <option value="">Pilih</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <p>Komentar</p>
+        localStorage.setItem("booking",JSON.stringify(updated));
+
+        alert("Ulasan berhasil dikirim");
+        navigate("/booking");
+    };
+
+    return(
+        <div className="ulasan-page">
+            <div className="ulasan-card">
+                <h1>Beri Ulasan</h1>
+
+                <div className="ulasan-content">
+                    <h2>Berikan Penilaian</h2>
+
+                    <div className="rating-group">
+                        {[1,2,3,4,5].map(star=>(
+                            <span
+                                key={star}
+                                className={
+                                    star<=rating
+                                        ?"star active"
+                                        :"star"
+                                }
+                                onClick={()=>setRating(star)}
+                            >
+                                ★
+                            </span>
+                        ))}
+                    </div>
+
                     <textarea
-                        value={komentar}
-                        onChange={(e) => setKomentar(e.target.value)}
+                        value={ulasan}
+                        onChange={e=>setUlasan(e.target.value)}
+                        placeholder="Tulis komentar atau pengalaman Anda..."
                     />
-                    <br /><br />
-                    <button
-                        type="button"
-                        onClick={simpanUlasan}
-                    >
-                        Simpan
-                    </button>
-                    <hr />
-                </>
-            )}
-            <table border="1" cellPadding="8">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Jasa</th>
-                    <th>Pelanggan</th>
-                    <th>Rating</th>
-                    <th>Komentar</th>
-                </tr>
-                </thead>
 
-                <tbody>
-                {ulasan.length === 0 ? (
-                    <tr>
-                        <td
-                            colSpan="5"
-                            style={{ textAlign: "center" }}
-                        >
-                            Belum ada ulasan
-                        </td>
-                    </tr>
-                ) : (
-                    ulasan.map((item) => (
-                        <tr key={item.id_ulasan}>
-                            <td>{item.id_ulasan}</td>
-                            <td>{item.nama_jasa}</td>
-                            <td>{item.nama_pelanggan}</td>
-                            <td>{item.rating}</td>
-                            <td>{item.komentar}</td>
-                        </tr>
-                    ))
-                )}
-                </tbody>
-            </table>
-        </Layout>
+                    <button
+                        className="btn-kirim-ulasan"
+                        onClick={submitUlasan}
+                    >
+                        Kirim Ulasan
+                    </button>
+                </div>
+            </div>
+        </div>
     );
 }
 

@@ -1,0 +1,122 @@
+.page{
+    max-width:1400px;
+    margin:auto;
+}
+
+.worker-jasa-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:24px;
+}
+
+.worker-jasa-card{
+    background:#ffffff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 4px 20px rgba(0,0,0,.06);
+    transition:.3s;
+}
+
+.worker-jasa-card:hover{
+    transform:translateY(-4px);
+}
+
+.worker-jasa-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.worker-jasa-content{
+    padding:20px;
+}
+
+.worker-jasa-content h3{
+    font-size:22px;
+    margin-bottom:8px;
+    color:#0f172a;
+}
+
+.worker-jasa-content p{
+    color:#64748b;
+    margin-bottom:6px;
+}
+
+.worker-jasa-content h4{
+    font-size:24px;
+    color:#4f46e5;
+    margin:12px 0;
+}
+
+.card-actions{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+}
+
+.edit-btn{
+    flex:1;
+    text-align:center;
+    text-decoration:none;
+    padding:12px;
+    border-radius:10px;
+    background:#4f46e5;
+    color:#ffffff;
+    font-weight:600;
+}
+
+.delete-btn{
+    flex:1;
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    background:#ef4444;
+    color:#ffffff;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.empty-jasa{
+    background:#ffffff;
+    padding:60px;
+    border-radius:20px;
+    text-align:center;
+    color:#94a3b8;
+    font-size:18px;
+}
+
+.action-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.btn-primary{
+    border:none;
+    padding:10px 16px;
+    border-radius:10px;
+    background:#4f46e5;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+    transition:.2s;
+}
+
+.btn-primary:hover{
+    background:#4338ca;
+}
+
+.btn-danger{
+    border:none;
+    padding:10px 16px;
+    border-radius:10px;
+    background:#ef4444;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+    transition:.2s;
+}
+
+.btn-danger:hover{
+    background:#dc2626;
+}

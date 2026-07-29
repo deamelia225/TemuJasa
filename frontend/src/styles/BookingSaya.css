@@ -1,0 +1,136 @@
+.status-box{
+    background:#f5f3ff;
+    padding:15px;
+    border-radius:15px;
+    margin-top:15px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.status-box div{
+    font-size:14px;
+    color:#555;
+}
+.status-box strong{
+    display:block;
+    margin-top:5px;
+    color:#5146df;
+    font-size:15px;
+}
+.waiting-payment{
+    margin-top:20px;
+    padding:12px;
+    background:#fff7ed;
+    color:#c2410c;
+    border-radius:12px;
+    font-weight:600;
+    text-align:center;
+}
+.working-status{
+    margin-top:20px;
+    padding:12px;
+    background:#ecfdf5;
+    color:#15803d;
+    border-radius:12px;
+    font-weight:600;
+    text-align:center;
+}
+.booking-page{
+    padding:40px;
+    background:#faf7fb;
+    min-height:100vh;
+}
+.booking-page h1{
+    font-size:36px;
+    color:#17203a;
+    margin-bottom:30px;
+}
+.booking-list{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+.booking-card{
+    background:white;
+    border-radius:22px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    max-width:850px;
+}
+.booking-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #eee;
+    padding-bottom:15px;
+}
+.booking-header h2{
+    color:#5146df;
+    margin:0;
+}
+.booking-header span{
+    background:#5146df;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:14px;
+}
+.booking-content p{
+    margin:12px 0;
+    color:#4b5563;
+    font-size:16px;
+}
+.booking-content h3{
+    color:#5146df;
+    font-size:22px;
+}
+.payment-status{
+    background:#f5f3ff;
+    padding:15px;
+    border-radius:15px;
+    margin-top:20px;
+}
+.payment-status p{
+    margin:0;
+    color:#666;
+}
+.payment-status strong{
+    color:#5146df;
+}
+.booking-action{
+    margin-top:20px;
+}
+.booking-action button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.btn-bayar{
+    background:#16a34a;
+    color:white;
+}
+.btn-wait{
+    background:#f59e0b;
+    color:white;
+}
+.btn-ulasan{
+    background:#5146df;
+    color:white;
+}
+.hasil-ulasan{
+    background:#ecfdf5;
+    padding:15px;
+    border-radius:12px;
+    color:#166534;
+    font-weight:600;
+}
+.empty-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+}

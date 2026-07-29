@@ -1,0 +1,37 @@
+.service-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.service-card img{
+    height:180px;
+    object-fit:cover;
+}
+
+.service-body{
+    padding:15px;
+}
+
+.service-title{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.service-price{
+    font-size:22px;
+    font-weight:700;
+    color:#ff6b00;
+    margin-top:10px;
+}
+
+.service-btn{
+    width:100%;
+    margin-top:15px;
+    background:#ff6b00;
+    color:white;
+    padding:12px;
+    border-radius:10px;
+}

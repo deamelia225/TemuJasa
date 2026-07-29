@@ -1,0 +1,98 @@
+.detail-page{
+    padding:40px;
+}
+
+.detail-card{
+    background:#fff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.detail-image{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:16px;
+}
+
+.detail-right h1{
+    margin-bottom:10px;
+    color:#1e293b;
+}
+
+.lokasi{
+    color:#64748b;
+    margin-bottom:10px;
+}
+
+.rating{
+    margin-bottom:10px;
+}
+
+.harga{
+    color:#4f46e5;
+    margin-bottom:20px;
+}
+
+.deskripsi{
+    color:#475569;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.detail-right input,
+.detail-right textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin-top:12px;
+    margin-bottom:12px;
+}
+
+.booking-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#4f46e5;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.booking-btn:hover{
+    background:#4338ca;
+}
+
+@media(max-width:900px){
+    .detail-card{
+        grid-template-columns:1fr;
+    }
+
+    .detail-image{
+        height:300px;
+    }
+}
+.booking-select{
+    width:100%;
+    height:56px;
+    border:1px solid #d8d8d8;
+    border-radius:14px;
+    padding:0 16px;
+    font-size:16px;
+    margin-top:18px;
+    margin-bottom:20px;
+    background:#fff;
+    outline:none;
+}
+
+.booking-select:focus{
+    border-color:#4f46e5;
+}

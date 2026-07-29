@@ -1,0 +1,28 @@
+.bottom-nav{
+    display:none;
+}
+
+@media(max-width:768px){
+    .bottom-nav{
+        display:flex;
+        position:fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        background:white;
+        border-top:1px solid #ddd;
+        justify-content:space-around;
+        padding:12px 0;
+        z-index:1000;
+    }
+
+    .bottom-nav a{
+        color:#475569;
+        font-size:13px;
+    }
+
+    .bottom-nav a.active{
+        color:#ff6b00;
+        font-weight:700;
+    }
+}

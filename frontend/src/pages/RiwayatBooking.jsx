@@ -1,78 +1,38 @@
-import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
-
-function RiwayatBooking() {
-    const [riwayat, setRiwayat] = useState([]);
-
-    useEffect(() => {
-        tampilRiwayat();
-    }, []);
-
-    async function tampilRiwayat() {
-        try {
-            const response = await fetch(
-                "http://localhost:22000/riwayat-booking"
-            );
-            const data = await response.json();
-            setRiwayat(data);
-        } catch (error) {
-            console.log(error);
-            alert("Server tidak dapat dihubungi");
-        }
-    }
-    return (
-        <Layout>
-            <h2>Riwayat Booking</h2>
-            <hr />
-
-            <table border="1" cellPadding="8">
+import{useEffect,useState}from"react";
+import"../styles/Table.css";
+function RiwayatBooking(){
+    const[data,setData]=useState([]);
+    useEffect(()=>{
+        const user=JSON.parse(localStorage.getItem("user"));
+        const booking=JSON.parse(localStorage.getItem("booking"))||[];
+        setData(booking.filter(item=>item.customer===user?.nama));
+    },[]);
+    return(
+        <div className="page">
+            <h1>Riwayat Booking</h1>
+            <table className="table">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Pelanggan</th>
-                    <th>Pekerja</th>
                     <th>Jasa</th>
-                    <th>Tanggal Selesai</th>
+                    <th>Penyedia</th>
+                    <th>Tanggal</th>
+                    <th>Harga</th>
                     <th>Status</th>
-                    <th>Catatan</th>
                 </tr>
                 </thead>
-
                 <tbody>
-                {riwayat.length === 0 ? (
-                    <tr>
-                        <td
-                            colSpan="7"
-                            style={{ textAlign: "center" }}
-                        >
-                            Belum ada riwayat booking
-                        </td>
+                {data.map(item=>(
+                    <tr key={item.id}>
+                        <td>{item.nama_jasa}</td>
+                        <td>{item.pemilik_jasa}</td>
+                        <td>{item.tanggal}</td>
+                        <td>Rp{Number(item.harga).toLocaleString("id-ID")}</td>
+                        <td>{item.status}</td>
                     </tr>
-                ) : (
-                    riwayat.map((item) => (
-                        <tr key={item.id_riwayat}>
-                            <td>{item.id_riwayat}</td>
-                            <td>{item.nama_pelanggan}</td>
-                            <td>{item.nama_pekerja}</td>
-                            <td>{item.nama_jasa}</td>
-                            <td>
-                                {new Date(item.tanggal_selesai)
-                                    .toLocaleDateString("id-ID", {
-                                        weekday: "long",
-                                        day: "numeric",
-                                        month: "long",
-                                        year: "numeric"
-                                    })}
-                            </td>
-                            <td>{item.status_akhir}</td>
-                            <td>{item.catatan}</td>
-                        </tr>
-                    ))
-                )}
+                ))}
                 </tbody>
             </table>
-        </Layout>
+        </div>
     );
 }
-
 export default RiwayatBooking;

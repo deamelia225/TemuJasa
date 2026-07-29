@@ -1,26 +1,50 @@
-import { useEffect, useState } from 'react';
+import"../styles/Table.css";
 
-function Users() {
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        getUsers();
-    }, []);
+function Users(){
+    const users=[
+        {
+            id:1,
+            nama:"Dea Amelia",
+            email:"dea@gmail.com",
+            role:"Customer"
+        },
+        {
+            id:2,
+            nama:"Andi",
+            email:"andi@gmail.com",
+            role:"Customer"
+        }
+    ];
 
-    async function getUsers() {
-        const response = await fetch('http://localhost:22000/users');
-        const data = await response.json();
-        setUsers(data);
-    }
-    return (
-        <div>
-            <h2>Data Users</h2> {
-                users.map((user) => (
-                    <div key={user.id_user}>
-                        <h3>{user.nama}</h3>
-                        <p>{user.email}</p>
-                    </div>
-                ))
-            }
+    return(
+        <div className="page">
+
+            <h1>Data User</h1>
+
+            <table className="table">
+
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {users.map(item=>(
+                    <tr key={item.id}>
+                        <td>{item.id}</td>
+                        <td>{item.nama}</td>
+                        <td>{item.email}</td>
+                        <td>{item.role}</td>
+                    </tr>
+                ))}
+                </tbody>
+
+            </table>
+
         </div>
     );
 }

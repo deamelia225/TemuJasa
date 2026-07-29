@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+}
+html{
+    scroll-behavior:smooth;
+}
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
