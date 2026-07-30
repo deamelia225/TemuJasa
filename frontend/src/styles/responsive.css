@@ -1,0 +1,91 @@
+/* TABLET */
+@media screen and (max-width:1024px){
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr !important;
+    }
+
+    .dashboard-grid,
+    .jasa-grid{
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr)) !important;
+    }
+
+    .booking-card,
+    .booking-worker-card{
+        width:100% !important;
+        max-width:100% !important;
+    }
+}
+
+
+/* MOBILE */
+@media screen and (max-width:768px){
+
+    .page,
+    .dashboard-page,
+    .jasa-page,
+    .booking-page,
+    .booking-form-page,
+    .booking-masuk-page{
+        padding:15px !important;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    .dashboard-grid,
+    .jasa-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    .auth-form{
+        max-width:100% !important;
+        padding:20px !important;
+    }
+
+    .welcome-card h1,
+    .page-header h1{
+        font-size:28px !important;
+    }
+
+    .stat-card h2,
+    .stat-card p{
+        font-size:32px !important;
+    }
+
+    .booking-table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    .booking-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+}
+
+
+/* HP KECIL */
+@media screen and (max-width:480px){
+
+    .welcome-card h1,
+    .page-header h1{
+        font-size:24px !important;
+    }
+
+    .auth-form h1{
+        font-size:24px !important;
+    }
+
+    .stat-card h2,
+    .stat-card p{
+        font-size:28px !important;
+    }
+
+    .dashboard-card img{
+        height:180px !important;
+    }
+}
